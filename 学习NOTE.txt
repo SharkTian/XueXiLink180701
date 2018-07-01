@@ -1,0 +1,1829 @@
+20180401
+
+ mouseover与mouseenter与mousemove的区别mouseout与mouseleave的区别
+ https://blog.csdn.net/fanbin168/article/details/38316841
+
+ JS获取随机的16位十六进制的数
+ https://www.cnblogs.com/LucklyPisces/p/7246621.html
+
+ JS实现随机生成十六进制颜色值的代码
+ https://blog.csdn.net/songlf521/article/details/52538464
+
+ JS实现数组去重方法总结(六种方法)
+ http://www.jb51.net/article/118657.htm
+ 
+
+ 20180402
+ pageX,clientX,offsetX,layerX的区别 容易理解
+ http://shanmao.me/web/js/pagex-clientx-offsetx-layerx-de-qu-bie
+
+ clientX,offsetX,layerX,pageX,screenX,X鼠标位置全解
+ https://www.cnblogs.com/xulei1992/p/5659923.html
+
+ js中的onscroll的用法
+ https://blog.csdn.net/kbx8916/article/details/53176703
+
+ CSS滚动条
+ http://www.cnblogs.com/xiaohuochai/p/5294409.html
+
+
+ 
+ 深入理解CSS元素可见性visibility
+ http://www.cnblogs.com/xiaohuochai/p/5296829.html
+
+ 深入理解CSS定位中的偏移
+ http://www.cnblogs.com/xiaohuochai/p/5289143.html
+
+20180404
+ js实现div固定在屏幕的某一个位置
+ https://blog.csdn.net/SuperVictim/article/details/51896899
+
+20180414
+ 阶乘的实现方法（一种递归，两种循环）
+ https://www.cnblogs.com/jialuchun/p/6559422.html
+
+ 什么是尾递归？
+ https://www.zhihu.com/question/20761771
+ 尾递归，比线性递归多一个参数，这个参数是上一次调用函数得到的结果；
+所以，关键点在于，尾递归每次调用都在收集结果，避免了线性递归不收集结果只能依次展开消耗内存的坏处。
+
+尾递归，比线性递归多一个参数，这个参数是上一次调用函数得到的结果；
+所以，关键点在于，尾递归每次调用都在收集结果，避免了线性递归不收集结果只能依次展开消耗内存的坏处。
+
+ Coke Zero
+	いつか帰るべき故郷を探し続ける旅人
+	136 人赞同了该回答
+	现有答案理解起来都好复杂，我答个简单易懂的。尾递归就是操作的最后一步是调用自身的递归。
+
+这是尾递归：
+function f(x) {
+   if (x === 1) return 1;
+   return f(x-1);
+}
+
+（这个程序没什么意义，仅作为理解辅助之用）。
+
+这不是尾递归：
+
+function f(x) {
+   if (x === 1) return 1;
+   return 1 + f(x-1);
+}
+
+后者不是尾递归，是因为该函数的最后一步操作是用1加上f(x-1)的返回结果，因此，最后一步操作不是调用自身。注意，后面这段代码的递归也发生在函数末尾，但它不是尾递归。尾递归的判断标准是函数运行最后一步是否调用自身，而不是是否在函数的最后一行调用自身。因此阶乘n!的递归求法，尽管看起来递归发生在函数末尾，其实也不是尾递归：
+
+function factorial(n) {
+   if (n === 1) return 1;
+   return n * factorial(n-1); // 最后一步不是调用自身，因此不是尾递归
+}
+
+使用尾递归可以带来一个好处：因为进入最后一步后不再需要参考外层函数（caller）的信息，因此没必要保存外层函数的stack，递归需要用的stack只有目前这层函数的，因此避免了栈溢出风险。
+
+一些语言提供了尾递归优化，当识别出使用了尾递归时，会相应地只保留当前层函数的stack，节省内存。
+
+所以，在没有尾递归优化的语言，如java, python中，鼓励用迭代iteration来改写尾递归；在有尾递归优化的语言如Erlang中，鼓励用尾递归来改写其他形式的递归。
+
+谢谢 
+@jamesr
+ 的指正~
+
+关于如何改写，参考：尾调用优化 - 阮一峰的网络日志
+
+编程小白学 Python
+https://www.zhihu.com/pub/reader/19550511
+
+20180417
+Node入门
+https://www.nodebeginner.org/index-zh-cn.html
+《Node.js 包教不包会》 by alsotang
+https://github.com/alsotang/node-lessons
+七天学会NodeJS
+http://nqdeng.github.io/7-days-nodejs/
+
+怎样有效地学习 Node.js？
+https://www.zhihu.com/question/19793473
+
+Node.js是用来做什么的？
+https://www.zhihu.com/question/33578075
+Node.js
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501245426ad4b91f2b880464ba876a8e3043fc8ef000
+
+腾讯 Web 工程师的前端书单
+https://cloud.tencent.com/developer/article/1004693
+Node.js快速入门
+https://www.yiibai.com/nodejs/nodejs-quick-start.html
+Node.js 究竟是什么？
+http://blog.jobbole.com/1254/
+
+20180418
+web知识-平时工作生活中的总结
+https://www.cnblogs.com/weiqinl/p/7503123.html
+
+node.js版本管理for window ---- nvmw
+https://www.cnblogs.com/amiezhang/p/7417884.html
+
+
+http://www.jb51.net/article/73424.htm
+
+《Node.js 调试指南》开源书籍发布
+http://cnodejs.org/topic/5a9661ff71327bb413bbff5b
+
+Nodejs 调试方法
+https://www.cnblogs.com/knightreturn/p/6480637.html
+
+NodeJS官方文档中文版之《代码调试入门指南》
+https://blog.csdn.net/juhaotian/article/details/79038919
+
+PHP问题
+
+搞不清FastCgi与PHP-fpm之间是个什么样的关系
+https://segmentfault.com/q/1010000000256516
+
+PHP 进阶之路 - 深入理解 FastCGI 协议以及在 PHP 中的实现
+https://segmentfault.com/a/1190000009863108
+
+npm设置prefix 路径
+http://www.cnblogs.com/strangerqt/p/4619896.html
+详细版 | 用Supervisor守护你的Node.js进程
+https://www.jianshu.com/p/6d84e5efe99d
+
+C:\Users\Administrator\AppData\Roaming\npm
+
+/dir "%CD%"
+
+
+nodejs之async异步编程
+http://cnodejs.org/topic/54acfbb5ce87bace2444cbfb
+
+Nodejs异步流程控制Async
+http://cnodejs.org/topic/52329b82101e574521feb858
+
+Nodejs异步流程控制Async
+http://blog.fens.me/nodejs-async/
+
+
+事件循环 的 学习
+
+实例分析JS与Node.js中的事件循环 好理解一点
+http://www.jb51.net/article/130342.htm 
+
+node 事件循环的 一点理解
+http://cnodejs.org/topic/5698467569d67aff5a8353ee
+
+理解 node.js 的事件循环
+https://www.cnblogs.com/zhangyubao/p/7003738.html
+
+[译] 所有你需要知道的关于完全理解 Node.js 事件循环及其度量
+https://www.cnblogs.com/MuYunyun/p/7287413.html
+
+真正理解 Node.js 的事件循环
+https://blog.csdn.net/yulianxuan/article/details/79500908
+
+深入理解Node.js 事件循环和回调函数
+http://www.jb51.net/article/96309.htm
+
+Node.js 事件循环 | 菜鸟教程
+http://www.runoob.com/nodejs/nodejs-event-loop.html
+
+关于真正理解Node.js事件循环你需要了解的一切
+https://www.juhe.cn/news/index/id/2543
+
+理解Node.js的事件循环（Event Loop）和线程池
+http://ourjs.com/detail/54c480c4232227083e000016
+
+怎样有效地学习 Node.js?——知乎
+http://www.360doc.com/content/15/1103/16/26223244_510467778.shtml
+https://www.zhihu.com/question/19793473/answer/12980526
+
+我的Node.js学习之路（三）--node.js作用、回调、同步和异步代码 以及事件循环
+http://www.jb51.net/article/51916.htm
+
+
+20180420
+
+module.exports | exports | export | export default的区别
+https://blog.csdn.net/caixiaowang/article/details/73441659
+
+Node.js模块里exports与module.exports的区别?
+https://www.zhihu.com/question/26621212
+
+JavaScript 模块演化简史 - 某熊的全栈之路 - 知乎专栏
+https://segmentfault.com/p/1210000008979782
+
+使用Visual Studio Code对Node.js进行断点调试
+http://cnodejs.org/topic/58f376fec749f63d48fe9548
+
+ First argument must be a string or Buffer
+
+
+ 来自掘金的你——挖 "掘" 淘 "金" 之 前端闯关历险记学习资料汇总 #4
+ https://github.com/jawil/blog/issues/4
+
+https://github.com/smyhvae/Web/blob/master/00-%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/%E6%8E%A8%E8%8D%90%E9%93%BE%E6%8E%A5.md
+
+first argument must be a string or Buffer异常
+http://cnodejs.org/topic/528373c0d2b3893f2ab496ab
+
+package-lock.json的作用
+https://www.cnblogs.com/cangqinglang/p/8336754.html
+
+
+20180421
+手把手教你 MongoDB 的安装与详细使用（一）
+https://blog.csdn.net/yanpenglei/article/details/79170793
+
+windows下MongoDB的安装及配置
+https://jingyan.baidu.com/article/d5c4b52bef7268da560dc5f8.html
+
+ndoe.js开发指南》示例代码调试问题之——
+TypeError: Cannot read property 'Store' of undefined
+http://cnodejs.org/topic/5059631a956bf5d80a0011d2
+
+
+开启mongod服务（Mongo运行错误：Failed to connect 127.0.0.1:27017,reason:errno:10061由于目标计算机积极拒绝，无法连接）
+https://www.cnblogs.com/meitian/p/4614389.html
+
+MongoDB 概念解析
+http://www.runoob.com/mongodb/mongodb-databases-documents-collections.html
+
+
+nodejs遇到的问题
+https://www.cnblogs.com/huansky/p/5524743.html
+
+Node.js开发指南 豆瓣读书
+https://book.douban.com/subject/10789820/
+
+MongoDB 创建数据库
+http://www.runoob.com/mongodb/mongodb-create-database.html
+
+20180423
+JS中的异步以及事件轮询机制
+https://www.cnblogs.com/heshan1992/p/6650593.html
+
+JavaScript 运行机制详解：再谈Event Loop
+http://www.ruanyifeng.com/blog/2014/10/event-loop.html
+
+https://www.baidu.com/s?wd=JS%E4%B8%AD%E5%AD%97%E9%9D%A2%E9%87%8F%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D&rsf=3&rsp=1&f=1&oq=%E4%BA%8B%E4%BB%B6%E8%BD%AE%E8%AF%A2&tn=50000021_hao_pg&ie=utf-8&rsv_pq=a8e3284a0002be4d&rsv_t=6c3b%2BwfTNL5BJo07rdrx73XQ9SlBK4fB%2F%2F%2FWkvxACwx%2FGph8HwERKvzvIHVLqeCAPwr3tpZX&rqlang=cn&srcqid=1962154462105169960&rs_src=0
+
+并发模型与事件循环
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop
+
+什么是流
+https://blog.csdn.net/zzqLivecn/article/details/5304195
+什么是事件流？
+https://blog.csdn.net/qq_37049128/article/details/76408693
+什么是IO流
+https://blog.csdn.net/luChenH/article/details/79050105
+JAVA中的流到底是什么？怎么这么抽象？
+https://www.zhihu.com/question/28457447
+
+20180424
+
+HTTP协议的chunked编码
+https://www.cnblogs.com/zhaozhan/archive/2010/08/24/1807639.html
+HTTP协议之chunk编码(分块传输编码)
+https://blog.csdn.net/xifeijian/article/details/42921827
+
+Vue.js——60分钟快速入门
+http://www.cnblogs.com/keepfool/p/5619070.html
+AngularJS快速入门
+https://www.yiibai.com/angularjs/angularjs_quick_guide.html
+AngularJS 教程
+http://www.angularjs.net.cn/tutorial/
+Web开发  易百教程
+https://www.yiibai.com/web/
+Node.js教程
+https://www.yiibai.com/nodejs/
+
+从image/x-png谈ContentType(s)
+https://www.cnblogs.com/liszt/archive/2010/12/31/1923134.html
+
+
+【求助】大家帮忙看下node代码，报错是什么问题？
+https://segmentfault.com/q/1010000011225359
+
+
+【求教】什么是中间件，nodejs的概念么？跟插件，模块有什么区别？
+https://cnodejs.org/topic/53f2b7af8f44dfa35140bca1
+
+浅谈前后端分离与实践（一）
+https://zhuanlan.zhihu.com/p/29996622
+浅谈前后端分离与实践 之 nodejs 中间层服务（二）
+https://zhuanlan.zhihu.com/p/30384677
+
+从零开始nodejs系列文章
+http://blog.fens.me/series-nodejs/
+
+Nodejs基础中间件Connect
+http://blog.fens.me/nodejs-connect/
+
+nodejs开发 express路由与中间件
+https://www.cnblogs.com/zapple/p/5683016.html
+
+nodejs 实践：express 最佳实践(三) express 解析
+http://www.cnblogs.com/htoooth/p/7142163.html
+
+nodejs 实践：express 最佳实践(五) connect解析
+https://www.cnblogs.com/htoooth/p/7116480.html
+
+nodejs 实践：express 最佳实践(七) 改造模块 connect2 解析
+http://www.cnblogs.com/htoooth/p/7122364.html
+
+nodejs 实践：express 最佳实践 (一) 项目结构
+http://www.cnblogs.com/htoooth/p/7181864.html
+
+nodejs 实践：express 最佳实践(四) express-session 解析
+https://www.cnblogs.com/htoooth/p/7340628.html
+
+nodejs模块学习： webpack
+http://www.cnblogs.com/htoooth/p/7354102.html
+nodejs 实践：express 最佳实践系列
+http://www.cnblogs.com/htoooth/p/8757611.html
+
+http://www.cnblogs.com/htoooth/
+
+Nodejs基础中间件Connect
+https://www.cnblogs.com/chris-oil/p/5625437.html
+
+
+next is a function to call to invoke the next middleware
+
+SOCKET.IO，系统API，
+http://www.cnblogs.com/xiezhengcai/p/3956401.html
+
+socket.io入门整理
+https://cnodejs.org/topic/50a1fcc7637ffa4155b5a264
+
+Socket.IO学习之基础入门
+https://blog.csdn.net/weichuang_1/article/details/48831957
+
+socket.io简易教程(群聊，发送图片，分组，私聊)
+https://blog.csdn.net/NEUQ_zxy/article/details/77531126
+
+socket.io 入门教程
+https://blog.csdn.net/luyaran/article/details/53991757
+
+菜鸟学习nodejs--Socket.IO即时通讯
+https://blog.csdn.net/lovemenghaibin/article/details/51263774
+
+socket.io官方文档
+https://www.w3cschool.cn/socket/
+微信小程序开发文档
+https://www.w3cschool.cn/weixinapp/
+
+AngularJS教程
+https://www.w3cschool.cn/angularjs/
+ECMAScript教程
+https://www.w3cschool.cn/ecmascript/
+
+
+https://www.w3cschool.cn/angularjs/
+
+精通 Omix 框架
+https://github.com/AlloyTeam/omi/blob/master/docs/README.md
+
+
+20180425 
+同样的排版样式为什么用英文字要比中文字出彩很多？
+https://www.zhihu.com/question/39457261?sort=created
+
+https://www.zhihu.com/question/20479953
+
+有什么好方法学习英语词根、词缀？
+
+
+
+用大白话揭开Ajax长轮询(long polling)的神秘面纱
+https://segmentfault.com/a/1190000005032908
+Ajax轮询——“定时的通过Ajax查询服务端”
+https://segmentfault.com/a/1190000005032921
+
+
+ WEB消息提醒实现之二 实现方式-基于Iframe的流方式
+https://blog.csdn.net/qq_23412263/article/details/70260083
+ 通过分析iframe和无阻塞脚本关系能让我们更懂iframe
+https://www.cnblogs.com/sharpxiajun/p/4077515.html
+探真无阻塞加载javascript脚本技术，我们会发现很多意想不到的秘密
+http://www.cnblogs.com/sharpxiajun/p/4072396.html
+
+关于javascript模块加载技术的一些思考
+http://www.cnblogs.com/sharpxiajun/p/3959807.html
+一个简单的、面向对象的javascript基础框架
+http://www.cnblogs.com/sharpxiajun/p/3956811.html
+关于Web开发里并发、同步、异步以及事件驱动编程的相关技术
+http://www.cnblogs.com/sharpxiajun/p/3955170.html
+
+关于如何提高Web服务端并发效率的异步编程技术
+http://www.cnblogs.com/sharpxiajun/p/3950466.html
+
+事件驱动机制跟消息驱动机制相比
+https://www.cnblogs.com/welen/articles/5115213.html
+
+Node.js中的事件驱动编程详解
+http://www.jb51.net/article/53812.htm
+
+iframe,我们来谈一谈
+https://segmentfault.com/a/1190000004502619
+
+JavaScript异步编程
+https://zhuanlan.zhihu.com/p/26567159
+为什么基于事件驱动的服务器能实现高并发？
+https://www.zhihu.com/question/64727674/answer/225018273
+
+深入理解 JavaScript Event Loop
+https://zhuanlan.zhihu.com/p/34229323
+NodeJS 之 EventEmitter
+https://zhuanlan.zhihu.com/p/24287529
+2017 年节点——我的技术投资学习策略：超越前端、物联网、事件驱动
+https://zhuanlan.zhihu.com/p/33784159
+事件驱动的简明讲解
+https://www.jianshu.com/p/2290bfbd75dd
+https://www.jianshu.com/u/608f43c3f11b
+
+每个人都应该学习一门编程语言
+https://www.jianshu.com/p/7004ecc2cf57
+浅谈高内聚低耦合
+https://www.jianshu.com/p/4d33117f6284
+JavaScript之异步编程简述
+http://blog.codingplayboy.com/2016/01/20/js_async_intro/
+
+Node.js 异步异闻录
+http://www.jqhtml.com/10722.html
+快速掌握Node.js事件驱动模型
+http://www.jb51.net/article/81262.htm
+理解 Node.js 事件驱动机制的原理
+http://www.jb51.net/article/121279.htm
+
+Promise
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000
+Promise
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
+JS - Promise使用详解2(ES6中的Promise)
+http://www.hangge.com/blog/cache/detail_1638.html
+promise介绍--基础篇
+https://segmentfault.com/a/1190000007678185
+
+看这一篇就够了！浅谈ES6的Promise对象
+https://www.jianshu.com/p/c98eb98bd00c
+ES6 JavaScript Promise的感性认知
+http://www.zhangxinxu.com/wordpress/2014/02/es6-javascript-promise-%E6%84%9F%E6%80%A7%E8%AE%A4%E7%9F%A5/
+
+
+20180426
+Nodejs开发框架Express3.0开发手记–从零开始
+http://blog.fens.me/nodejs-express3/
+Promise介绍--异步篇
+https://segmentfault.com/a/1190000007936922
+
+Tasks, microtasks, queues and schedules
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+
+认识Promise
+https://segmentfault.com/a/1190000012937583
+
+JavaScript 中的异步：Event Loop 及其他
+https://zhuanlan.zhihu.com/p/22710155
+
+Promise的队列与setTimeout的队列有何关联？
+https://www.zhihu.com/question/36972010
+Promise & Generator——幸福地用同步方法写异步JavaScript
+https://segmentfault.com/a/1190000007255138
+ECMAScript 6入门与进阶
+http://blog.codingplayboy.com/2016/10/15/ecmascript-6/
+
+理解 Node.js 事件驱动机制的原理
+http://www.jb51.net/article/121279.htm
+
+
+Nodejs开发框架Express3.0开发手记–从零开始
+http://blog.fens.me/nodejs-express3/
+
+20180427
+
+反向代理为何叫反向代理？
+https://www.zhihu.com/question/24723688
+
+Express3.0中文文档
+http://expressjs.jser.us/3x_zh-cn/api.html#app.use
+
+编程中什么是「Context(上下文)」？
+https://www.zhihu.com/question/26387327
+
+#2017年剁手回忆录#3~6岁学前儿童读本剁手清单
+https://post.smzdm.com/p/662812/
+
+夫妻俩13万全程DIY爆装三室两厅全记录，并向你推荐了这些好物
+https://post.smzdm.com/p/687326/?nozhiyou
+#原创新人##年后装修焕新家#木工自制柜类资料及经验总结
+https://post.smzdm.com/p/661772/
+囤书是种病 篇六：#剁主计划-成都#2017 年阅读书单分享（附推荐评级）
+https://post.smzdm.com/p/523537/
+2015年读过的《罗辑思维》推荐书籍
+https://post.smzdm.com/p/456082/?nozhiyou
+https://post.smzdm.com/p/456082/?nozhiyou
+
+
+https://post.smzdm.com/p/456093/?nozhiyou
+#全民分享季#男装那么点事，也许看完这篇就都懂了
+https://post.smzdm.com/p/685500/
+https://post.smzdm.com/p/410080/
+我的理财进阶之路 篇二：如何选择一只优秀的基金
+https://post.smzdm.com/p/675236/
+
+WebSocket 详解教程
+https://www.cnblogs.com/jingmoxukong/p/7755643.html
+WebSocket 教程
+http://www.ruanyifeng.com/blog/2017/05/websocket.html
+
+WebSocket 是什么原理？为什么可以实现持久连接？
+https://www.zhihu.com/question/20215561
+
+WebSocket与消息推送
+https://www.cnblogs.com/best/archive/2016/09/12/5695570.html
+Socket 与 WebSocket
+https://blog.zengrong.net/post/2199.htmls
+【Node.js基础篇】（五）使用mime模块来响应css、js文件的请求
+https://blog.csdn.net/zgljl2012/article/details/44700953
+Node.js基础学习
+https://blog.csdn.net/column/details/nodejs-1.html
+socket.io简易教程(群聊，发送图片，分组，私聊)
+https://blog.csdn.net/NEUQ_zxy/article/details/77531126
+
+mime模块响应或设置Node.js的Content-Type头
+https://www.cnblogs.com/jeacy/p/6992435.html
+
+自己动手模拟开发一个简单的Web服务器
+https://www.cnblogs.com/edisonchou/p/4266035.html
+
+
+socket.io 的详细工作流程是怎样的？
+https://www.zhihu.com/question/31965911
+
+
+狼叔：如何正确学习 Node.js？
+https://www.zhihu.com/lives/928687583372926976
+狼叔：Node.js 源码是如何执行的？
+https://www.zhihu.com/lives/878296775587409920
+
+20180428
+
+Node.js基础学习
+https://blog.csdn.net/column/details/nodejs-1.html
+socket.io简易教程(群聊，发送图片，分组，私聊)
+https://blog.csdn.net/NEUQ_zxy/article/details/77531126
+socket.io实现私聊
+https://blog.csdn.net/koastal/article/details/53677766
+
+socket.io 快速入门教程——聊天应用
+https://www.w3cschool.cn/socket/socket-ulbj2eii.html
+jQuery API
+http://jquery.cuishifeng.cn/
+
+20180429
+
+一篇我见过的最好的关于英语学习的文章
+https://site.douban.com/228865/widget/notes/15606768/note/529570229/
+http://www.360doc.com/content/11/1018/16/7193224_157174712.shtml
+
+Jade中文文档
+http://www.nooong.com/docs/jade_chinese.htm
+MongoDB的基本使用
+https://blog.csdn.net/xiaoif/article/details/52581730
+
+20180430
+后台模板引擎EJS和Jade 一些语法
+https://www.jianshu.com/p/d515fe5a5cfb
+
+20180501
+AngularJS 在实际应用中有哪些优缺点？
+https://www.zhihu.com/question/22284218
+
+不要被惯性思维骗了，AngularJS真的那么完美？
+https://blog.csdn.net/guoshengkai373/article/details/78874935
+
+AngularJS快速入门
+https://www.yiibai.com/angularjs/angularjs_quick_guide.html
+
+AngularJS 基础教程一
+https://www.cnblogs.com/caozong/p/5827380.html
+
+AngularJS 依赖注入
+http://www.runoob.com/angularjs/angularjs-dependency-injection.html
+
+名师带你学习angular前端框架【爱前端】
+https://ke.qq.com/course/227188
+
+前端开发模板引擎 -- Jade系列之神奇的 mixins 和模板继承
+http://www.html-js.com/article/2596
+
+
+mongodb意外退出无法启动解决办法（Unclean shutdown detected.）
+https://blog.csdn.net/liubo2012/article/details/8565415
+
+连接mongodb时出现错误，Error: collection name must be a String
+https://segmentfault.com/q/1010000008088495/a-1020000008090913
+MongoDB学习 (六)：查询
+https://www.cnblogs.com/egger/archive/2013/06/14/3135847.html
+
+
+nodejs mongodb 如何根据_id查询
+https://segmentfault.com/q/1010000009570936
+
+MongoDB学习（七）$操作符表达式大全及实例
+https://blog.csdn.net/qq_16313365/article/details/58599253
+
+
+20180503
+
+http://www.phpstudy.net/
+
+sequelize常见操作使用方法（增删改查，手把手教学）
+https://blog.csdn.net/qq328691560/article/details/50564697
+
+Sequelize 中文API文档－1. 快速入门、Sequelize类
+https://itbilu.com/nodejs/npm/VkYIaRPz-.html#induction-model
+
+Node.js ORM 框架 sequelize 入门教程 1
+http://www.html-js.com/article/1957
+
+Getting started - 入门
+https://github.com/demopark/sequelize-docs-Zh-CN/blob/master/getting-started.md
+https://github.com/demopark/sequelize-docs-Zh-CN
+
+使用Sequelize
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000
+
+Node.js使用Sequelize操作MySQL
+http://www.w3clog.com/21.html
+
+Node.js Sequelize 模型(表)之间的关联及关系模型的操作
+https://itbilu.com/nodejs/npm/EJarwPD8W.html
+如何更深入地学习 Linux？
+https://www.zhihu.com/question/23564190
+
+mysqld --skip-grant-tables
+我对知乎前端相关问题的十问十答
+http://www.sohu.com/a/145748302_723543
+http://www.zhangxinxu.com/wordpress/2017/06/ten-question-about-frontend-zhihu/
+
+Sequelize 中文文档 v4 - Basic usage - 基本用法
+https://segmentfault.com/a/1190000011584031
+
+Why Promises?
+http://bluebirdjs.com/docs/why-promises.html
+
+jQuery在线手册 | jQuery API 中文手册 | jquery 1.7.2
+http://www.codesocang.com/jq/jquery1.7.2.html
+
+20180505
+计算机网络技术
+https://edu.aliyun.com/course/152/lesson/list?spm=5176.8764728.aliyun-edu-course-tab.2.oWldXP&previewAs=guest
+
+
+https://edu.aliyun.com/course/explore/frontend?spm=5176.10731491.category.10.jGjhcI&filter%5Btype%5D=all&filter%5Bprice%5D=all&filter%5BcurrentLevelId%5D=all&orderBy=studentNum
+
+娇娇jojojo
+https://my.oschina.net/u/2941696/blog
+https://gitee.com/null_747_9838
+
+https://gitee.com/youknow.
+
+20180504
+
+
+js ~操作符(字位操作"非")详解
+https://blog.csdn.net/qq_31070475/article/details/72598500
+
+
+http://book.51cto.com/art/201708/547336.htm
+
+expect学习笔记及实例详解
+https://blog.csdn.net/guofatfat/article/details/18861103
+
+用Expect.js 进行BDD
+http://book.51cto.com/art/201505/477016.htm
+
+mocha 的基本介绍&&expect风格断言库的基本语法
+https://www.jianshu.com/p/c7c86b8f376c
+
+如何整理电脑文件夹？
+https://www.zhihu.com/question/19901022
+
+
+Node.js 入门
+https://cnodejs.org/getstart
+
+mocha 总结文档
+https://cnodejs.org/topic/59e3873520a1a3647d72ac39
+
+mocha 廖雪峰的
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00147203593334596b366f3fe0b409fbc30ad81a0a91c4a000
+
+https://blog.csdn.net/lihongxun945/article/category/5650905
+ES6详解七：循环的秘密 - iterator 和 yield
+https://blog.csdn.net/lihongxun945/article/details/48952017
+ES6详解八：模块（Module）！
+https://blog.csdn.net/lihongxun945/article/details/49031383
+ES6详解三：class
+https://blog.csdn.net/lihongxun945/article/details/48529371
+ES6详解六：赋值语法糖 destructing & spread
+https://blog.csdn.net/lihongxun945/article/details/48935133
+ES6详解五：Symbol
+https://blog.csdn.net/lihongxun945/article/details/48554117
+ES6详解四： WeakMap
+https://blog.csdn.net/lihongxun945/article/details/48530941
+ES6 详解二： 新增内容概览
+https://blog.csdn.net/lihongxun945/article/details/46898425
+ES6详解一：复习ES5 新增内容
+https://blog.csdn.net/lihongxun945/article/details/46867397
+
+[es6]Symbol.iterator 和 for of
+https://blog.csdn.net/gjc9620/article/details/47681271
+
+yield 和 yield*
+https://segmentfault.com/a/1190000003982531
+
+yield 原理篇
+http://www.html-js.com/article/1711
+http://www.html-js.com/article/column/77
+
+收藏】这么多WEB组件(CSS)，攒一个网站够了吧？
+http://www.html-js.com/article/4614
+如何面试一名前端开发工程师？
+http://www.html-js.com/article/Large-search-front-team-column%202961
+【基础】这15种CSS居中的方式，你都用过哪几种？
+http://www.html-js.com/article/4613
+【基础】在css中绘制三角形及相关应用
+http://www.html-js.com/article/4763
+【基础知识】Flex-弹性布局原来如此简单！！
+http://www.html-js.com/article/4621
+
+翻译：ECMAScript 5.1简介
+http://www.zhangxinxu.com/wordpress/2012/01/introducing-ecmascript-5-1/
+es6features
+https://github.com/lukehoban/es6features
+
+
+[es6]Symbol.iterator 和 for of
+https://blog.csdn.net/gjc9620/article/details/47681271
+
+Symbol.iterator
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
+
+解决回调金字塔! Harmony Generator, yield, ES6, co框架学习
+http://www.html-js.com/article/Nodejs-commonly-used-modules-detailed-address-correction-in-Pyramid-Harmony-Generator-yield-ES6-CO-framework-of-learning
+
+如何理解ES6的yield ？
+https://www.zhihu.com/question/30258965
+
+
+关于Byte类型的理解
+https://www.oschina.net/question/153826_52869
+
+使用 IndexedDB
+http://www.tfan.org/using-indexeddb/
+
+HTML5之本地存储对象Web Storage和storage事件监听无效问题
+https://blog.csdn.net/zuosixiaonengshou/article/details/71774338
+
+html5客户端本地存储之sessionStorage及storage事件
+http://www.cnblogs.com/shihao/archive/2011/12/23/2298854.html
+
+Web数据持久化存储IndexedDB（不常用）
+https://www.cnblogs.com/lovesong/p/5055384.html
+Indexed DB入门导学(2)
+http://developer.51cto.com/art/201310/412224_1.htm
+
+IndexedDB
+https://blog.csdn.net/u013291076/article/details/45336581
+
+20180509
+探索 FileSystem API
+https://www.html5rocks.com/zh/tutorials/file/filesystem/#toc-dir-fullexample
+
+HTML5 本地文件操作之FileSystemAPI整理（一）
+http://www.cnblogs.com/tianma3798/p/6439551.html
+
+http://www.open-open.com/doc/list/181?o=p
+
+廖雪峰 的 ajax
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499861493e7c35be5e0864769a2c06afb4754acc6000
+
+HTML5 FormData 方法介绍以及实现文件上传
+https://blog.csdn.net/u014607184/article/details/52372551
+
+http://jquery.com/download/
+node.js http
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345015296018cac40c198b543fead5c549865b9bd4a000
+
+20180510
+
+koa
+https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501579966ab03decb0dd246e1a6799dd653a15e1b000
+
+https://iweb.ke.qq.com/#tab=1&category=-1&tuin=37567e82
+https://ke.qq.com/user/index/index.html#cid=227188&tid=100268141&fr=2&term_id=100268141
+08_双向数据绑定小案例4-省市县联动
+https://ke.qq.com/webcourse/index.html#course_id=227188&term_id=100268141&taid=1305012928214900&vid=p1418ir1ty0
+
+20180512
+ng-options用法详解
+https://www.cnblogs.com/panda-zhang/p/5290694.html
+
+浏览器事件模型和回调机制
+https://www.cnblogs.com/whitewolf/archive/2015/10/22/4902570.html
+
+
+五分钟搭建起一个包含CRUD功能的JqGrid表格
+http://www.cnblogs.com/rohelm/p/4278657.html
+
+表单验证<AngularJs>
+http://www.cnblogs.com/rohelm/p/4033513.html
+
+【javascript】js 检验密码强度
+http://www.cnblogs.com/yjzhu/p/3394717.html
+
+20180513
+angular五种服务详解
+https://www.cnblogs.com/liulangmao/p/4078246.html
+
+angular五种服务详解
+https://blog.csdn.net/qq_33587050/article/details/52138069
+
+angular http provider配置
+https://blog.csdn.net/ristal/article/details/38539875
+
+AngularJS：何时应该使用Directive、Controller、Service？
+https://blog.csdn.net/qq_33915096/article/details/50624798
+
+
+AngularJS 在实际应用中有哪些优缺点？
+https://www.zhihu.com/question/22284218
+
+一招制敌 - 玩转 AngularJS 指令的 Scope (作用域)
+https://segmentfault.com/a/1190000002773689
+
+NodeJS安装及简要介绍
+http://www.iqianduan.cn/content/?p=js_2
+
+
+MVC和Angular简介
+http://www.iqianduan.cn/content/?p=js_mvc
+
+TJ Holowaychuk是怎样学习编程的？
+https://zhuanlan.zhihu.com/p/19572823
+
+尤雨溪：回应『Angular有哪些地方比Vue更优秀？』
+https://juejin.im/entry/5982b470518825357165340d
+
+狼叔：Node.js 源码是如何执行的？live
+https://www.zhihu.com/lives/878296775587409920
+
+VUE2.0 项目实战完整版【爱前端】
+https://ke.qq.com/course/261884
+https://cn.vuejs.org/v2/guide/
+
+https://webpack.docschina.org/guides
+
+
+https://www.webpackjs.com/concepts/
+
+深入浅出React  在InfoQ上的内容
+http://www.infoq.com/cn/dive-into-react
+
+《深入浅出React和Redux》读书笔记一
+https://segmentfault.com/a/1190000011175751
+
+
+深入浅出React（二）：React开发神器Webpack
+http://www.infoq.com/cn/articles/react-and-webpack
+
+一看就懂的ReactJs入门教程-精华版
+https://www.cnblogs.com/yunfeifei/p/4486125.html
+
+React 中文版
+http://wiki.jikexueyuan.com/project/react/
+http://react.yubolun.com/
+http://react-china.org/t/react-js/398
+
+css脱离文档流到底是什么意思，脱离文档流就不占据空间了吗？脱离文档流是不是指该元素从dom树中脱离？
+https://www.zhihu.com/people/zhang-qiu-yi-27/answers?page=2
+
+02-React起步webpack和babel的配置 【爱前端】
+https://ke.qq.com/webcourse/index.html#course_id=227111&term_id=100268050&taid=1495730950993703&vid=i14187hysoh
+
+Babel 从入门到插件开发
+http://web.jobbole.com/91277/
+
+
+学习 ES2015
+https://babeljs.cn/learn-es2015/
+
+
+https://angular.cn/docs
+
+印记中文
+https://docschina.org/#fe
+
+低门槛彻底理解 JavaScript 中的深拷贝和浅拷贝
+http://web.jobbole.com/94488/
+
+37个 JavaScript 基本面试问题和解答
+http://web.jobbole.com/94523/
+React 路由状态管理总结
+http://web.jobbole.com/94532/
+
+如果有人让你推荐编程技术书，请叫他看这个列表
+http://blog.jobbole.com/106093/
+
+
+项目中如何使用babel6详解
+https://www.cnblogs.com/yuqing6/p/6754675.html
+
+如何写好.babelrc？Babel的presets和plugins配置解析
+https://segmentfault.com/p/1210000007700211
+
+Polyfill是什么啊 为什么他拿给你解决兼容问题
+https://segmentfault.com/q/1010000006796739
+https://excaliburhan.com/post/babel-preset-and-plugins.html
+
+
+npm使用入门
+https://www.jianshu.com/p/4643a8e43b79
+
+【原】npm 常用命令详解
+https://www.cnblogs.com/PeunZhang/p/5553574.html
+
+教，想问下npm下代码时 -D -S 有什么区别，其他还有哪些
+https://segmentfault.com/q/1010000008141923
+
+npm 安装参数中的 --save-dev 是什么意思
+https://segmentfault.com/q/1010000000403629
+
+简单5步，从0开始搭建你的第一款小程序
+https://cloud.tencent.com/developer/article/1117472
+
+微信小程序《易打卡》开发实战
+https://cloud.tencent.com/developer/article/1004778
+
+ES6学习之Babel的正确安装姿势
+https://www.cnblogs.com/zhenwen/archive/2016/07/17/5679589.html
+
+vue-router http://www.cnblogs.com/xinggood/p/6811470.html
+http://www.cnblogs.com/xinggood/p/6811470.html
+
+你真的会用 Babel 吗?
+https://segmentfault.com/a/1190000011155061
+
+
+webpack到底怎么用?
+https://www.zhihu.com/question/39290543
+
+webpack学习之路
+https://github.com/wangning0/Autumn_Ning_Blog/blob/master/blogs/3-12/webpack.md
+
+
+入门Webpack，看这篇就够了
+https://www.jianshu.com/p/42e11515c10f
+https://github.com/zhangwang1990/blogs/tree/master/sources/webpackTest
+
+什么是WebPack，为什么要使用它？
+https://www.jianshu.com/p/d745b94ae920
+
+Grunt 新手一日入门
+http://yujiangshui.com/grunt-basic-tutorial/
+Gulp 自动化你的前端
+https://www.sheyilin.com/2016/02/gulp_introduce/
+
+eact路上遇到的那些问题以及解决方案
+https://blog.csdn.net/liangklfang/article/details/53694994
+https://github.com/liangklfangl/react-npm-node-errors
+
+
+webpack快速入门——实战技巧：watch的正确使用方法，webpack自动打包
+https://www.cnblogs.com/hezihao/p/8072750.html
+
+前后端 127 集视频分享（Nodejs，React，Redux，Webpack)
+https://www.rails365.net/articles/hou-duan-127-shi-pin-fen-xiang-nodejs-react-redux
+
+
+三年从前端小工到架构 知乎live
+https://www.zhihu.com/lives/822404350461739008
+
+gulp是一个前端工作流管理工具，具体做什么的？
+
+https://www.zhihu.com/question/35479764
+
+
+gulp是用来干什么的？（概念）
+https://www.cnblogs.com/xiangru0921/p/6866254.html
+
+
+Gulp教程之：Gulp能做什么，前端装逼为何要用它
+https://blog.csdn.net/xllily_11/article/details/51320002
+
+
+webpack超简易入门安装
+https://segmentfault.com/a/1190000011882193
+
+一、webpack那点事-安装、环境搭建
+https://www.cnblogs.com/Savcry/p/Young.html
+
+
+webpack到底怎么用?
+https://www.zhihu.com/question/39290543
+
+
+Webpack傻瓜式指南（一）
+https://zhuanlan.zhihu.com/p/20367175?columnSlug=FrontendMagazine
+
+https://www.imooc.com/u/4421995/bbs
+
+webpack概述 webpack v3.5.5
+http://www.css88.com/doc/webpack/concepts/configuration/
+
+JavaScript ES6中export及export default的区别
+https://blog.csdn.net/zhou_xiao_cheng/article/details/52759632
+
+export ，export default 和 import 区别 以及用法
+https://www.cnblogs.com/xiaotanke/p/7448383.html
+
+
+ES6：export default 和 export 区别
+https://www.jianshu.com/p/edaf43e9384f
+
+最受欢迎的 react框架【爱前端】
+https://ke.qq.com/course/215047
+https://iweb.ke.qq.com/#tab=1&category=-1&tuin=37567e82
+
+
+20180515
+慕课网 reactjs
+https://www.imooc.com/course/list?c=reactjs
+阿里云大学
+https://edu.aliyun.com/course/29/lesson/list?spm=5176.8764728.aliyun-edu-course-tab.2.rw4dzo&previewAs=guest
+
+
+React 中文文档（V16.2.0）
+http://www.css88.com/react/docs/hello-world.html
+
+
+https://ke.qq.com/course/202593
+
+
+reactJS 干货（reactjs 史上最详细的解析干货）
+https://blog.csdn.net/zwp438123895/article/details/69374940
+
+一看就懂的ReactJs入门教程-精华版
+https://www.cnblogs.com/yunfeifei/p/4486125.html
+
+React 入门实例教程
+http://www.ruanyifeng.com/blog/2015/03/react.html
+React 技术栈系列教程
+http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html
+
+Vue.js入门教程
+https://www.jianshu.com/p/710e66547bbb
+
+VueJs2.0建议学习路线
+https://www.cnblogs.com/smartXiang/p/6051086.html
+
+
+Vue.js新手入门指南
+https://zhuanlan.zhihu.com/p/25659025
+
+一句话理解Vue核心内容
+https://www.jianshu.com/p/a4339bad5256
+
+
+给正在学习Vuejs同学的几个小Tips.
+https://www.imooc.com/article/12479
+
+
+Vue.js 2.0 快速上手精华梳理
+https://blog.csdn.net/sinat_17775997/article/details/77824878
+
+JavaScript 全栈工程师培训教程
+http://www.ruanyifeng.com/blog/2016/11/javascript.html
+
+https://pan.baidu.com/s/1msa2ia9VTC1QXC9wc_8CYQ#list/path=%2F%E7%88%B1%E5%89%8D%E7%AB%AF%E5%85%A8%E7%BD%91%E6%9C%80%E5%AE%8C%E6%95%B4%E7%89%88%E6%9C%80%E6%96%B0%E6%AF%95%E4%B8%9A%E7%8F%AD%E9%82%B5%E5%B1%B1%E6%AC%A2
+
+
+https://ke.qq.com/webcourse/index.html#course_id=227111&term_id=100268050&taid=1495765310732071&vid=y1418046gpw
+
+20180516
+
+实例讲解基于 React+Redux 的前端开发流程
+https://segmentfault.com/a/1190000005356568
+
+【宅印团队教程】实例讲解基于 react+redux 的前端开发流程
+https://www.jianshu.com/p/e293f3aba15e
+
+实例讲解基于 React+Redux 的前端开发流程
+
+https://blog.csdn.net/fengyinchao/article/details/51566555
+
+
+
+理解 React，但不理解 Redux，该如何通俗易懂的理解 Redux？
+https://www.zhihu.com/question/41312576?sort=created
+
+http://www.css88.com/react/tutorial/tutorial.html
+
+Redux 中文文档
+http://www.redux.org.cn/docs/introduction/Motivation.html
+http://cn.redux.js.org/
+
+通俗易懂的理解 Redux(知乎)
+https://www.cnblogs.com/itlyh/p/6057518.html
+
+闲聊 Redux（上）
+http://www.sohu.com/a/124095321_505779
+https://505779.kuaizhan.com/48/45/p39884627770eac
+闲聊 Redux（下）
+http://www.sohu.com/a/125622666_505779
+
+为什么我觉得redux相当难以理解呢？
+https://www.zhihu.com/question/275819051/answer/385170477
+
+
+https://www.jianshu.com/p/0e42799be566
+深入理解React、Redux
+
+react_home
+https://github.com/aiyuekuang/react_home
+
+redux深入理解
+https://www.jianshu.com/p/dc38cfe71fe9
+
+如何理解Redux的流程
+https://www.jianshu.com/p/85c7a14833a9
+
+如何正确理解redux？
+https://segmentfault.com/q/1010000007911312
+
+
+关于Redux刚刚刚刚入门者对Redux的理解和使用
+https://github.com/Nealyang/study-redux/blob/master/README.md
+
+
+React学习笔记－－通过Redux 的三个基本原则来理解Redux
+https://blog.csdn.net/shenlei19911210/article/details/52679570
+
+
+Redux书写习惯
+https://segmentfault.com/a/1190000010915166
+
+redux在react中的应用（基础篇）
+https://www.jianshu.com/p/7a71181a7aa0
+
+从表象理解Redux
+https://www.jianshu.com/p/60038e748dfa
+
+Redux 简明教程
+https://github.com/kenberkeley/redux-simple-tutorial
+https://w3ctech.com/topic/1561
+
+Redux 简介
+https://www.ibm.com/developerworks/cn/web/wa-manage-state-with-redux-p1-david-geary/index.html?ca=drs-
+
+Redux入门教程（快速上手）
+https://segmentfault.com/a/1190000011474522
+
+
+从零搭建React全家桶框架教程 #1
+https://github.com/brickspert/blog/issues/1
+
+
+https://www.kancloud.cn/physihan/redux/238797
+
+深入理解redux - 掘金
+https://juejin.im/post/5a9e6a61f265da239866c7a3
+
+https://mandyjin.github.io/2018/03/25/redux-theory/
+使用 Redux 管理状态，第 4 部分
+使用 Redux 实现时间旅行
+https://www.ibm.com/developerworks/cn/web/wa-manage-state-with-redux-p4-david-geary/index.html
+
+
+redux原理理解(一)
+https://mandyjin.github.io/2018/03/25/redux-theory/
+
+理解redux - CSDN博客
+https://blog.csdn.net/zp1996323/article/details/55105904
+
+20180518
+https://www.vue-js.com/
+浅谈Vue.js
+https://www.cnblogs.com/luozhihao/p/5329440.html
+
+vue.js——60分钟快速入门
+https://www.cnblogs.com/rik28/p/6024425.html
+
+大神面对面：Vue.js 作者尤雨溪专访
+https://zhuanlan.zhihu.com/p/27205354
+
+
+Vue.js 这个框架怎么样评价?
+https://www.zhihu.com/question/22775018
+
+Vue.js：a (re)introduction
+https://zhuanlan.zhihu.com/p/20302927
+
+Vuejs入门基础笔记
+https://www.cnblogs.com/Aptenk/p/6762346.html
+vue.js入门基础
+http://www.imooc.com/learn/694
+
+Vue.js 源码学习笔记
+http://jiongks.name/blog/vue-code-review/
+
+可能是目前最完整的前端框架 Vue.js 全面介绍
+http://baijiahao.baidu.com/s?id=1587075843882427601&wfr=spider&for=pc
+http://www.cocoachina.com/programmer/20171207/21458.html
+
+为什么会有人说 Vue.js 简单？
+https://www.v2ex.com/t/294276?p=1
+
+前端MVVM框架之“Vue.js入门篇”
+http://www.duanliang920.com/learn/web354.html
+
+在 Vue.js 中使用任意 JavaScript 第三方库
+http://www.css88.com/archives/7939
+http://www.css88.com/archives/category/js-and-ria/vue-js
+
+初识vue.js
+https://www.jianshu.com/p/a9958f686a7b
+
+
+
+vue.js学习：1.0到2.0的变化（区别）
+https://blog.csdn.net/a895865025/article/details/74331626
+
+vuejs官方文档更新了，现在只能找到vue2.0的中文文档了，1.0的中文文档不见了？
+https://www.zhihu.com/question/52302227
+
+
+Vue.js 1.0
+https://v1-cn.vuejs.org/guide/
+
+React路上遇到的那些问题以及解决方案
+https://blog.csdn.net/liangklfang/article/details/53694994
+https://github.com/liangklfangl/react-npm-node-errors
+
+webpack快速入门——实战技巧：watch的正确使用方法，webpack自动打包
+https://www.cnblogs.com/hezihao/p/8072750.html
+webpack3 学习内容，点击即可到达
+http://www.cnblogs.com/hezihao/p/7921872.html
+
+https://www.jianshu.com/u/7091a52ac9e5
+
+CSS简史（译）
+https://www.jianshu.com/p/8a58852e9cd6
+
+（React启蒙）初探React
+https://www.jianshu.com/p/29e47d17c31f
+
+
+Vue 爬坑之路（一）—— 使用 vue-cli 搭建项目
+https://www.cnblogs.com/wisewrong/p/6255817.html
+
+
+Vue2.0史上最全入坑教程（上）—— 搭建Vue脚手架（vue-cli）
+https://www.jianshu.com/p/1626b8643676
+
+VUE学习目录汇总
+https://www.jianshu.com/p/dc5057e7ad0d
+
+
+十本学习前端必看书籍，让你效率提升10倍
+http://www.icketang.com/2018/News_0226/91.html
+
+爱创课堂
+https://ickt.ke.qq.com/?tuin=c1e347cf#category=-1&tab=2
+
+JavaScript中并没有直接提供对象复制(Object Clone)的方法。
+https://www.cnblogs.com/lzpong/p/6973003.html
+
+
+深入探讨JavaScript如何实现深度复制（deep clone）
+https://www.cnblogs.com/yugege/p/5200142.html
+
+
+https://www.imooc.com/video/12307
+
+前端名师带你学习vue2.0前端框架【爱创课堂】
+https://ke.qq.com/webcourse/index.html#course_id=271106&term_id=100320182&taid=1923642837705474&vid=s1423i4aypo
+
+
+主流实战框架之了不起的VUE【渡一教育】
+https://ke.qq.com/course/278458
+
+https://duyi.ke.qq.com/
+
+你不知道的JavaScript【渡一教育】
+https://ke.qq.com/course/272776
+http://study.163.com/provider/1028434967/index.htm
+http://study.163.com/instructor/1028859869.htm
+
+妙味课堂-vue.js实战开发系列课程
+https://ke.qq.com/course/178139
+
+CSS中不可不知的名词——BFC
+https://tieba.baidu.com/p/5456414503
+
+前端开发知识点与面试题集锦
+https://tieba.baidu.com/p/5389522958
+
+https://miaov.ke.qq.com/
+
+Node.js 实战开发：博客系统
+https://ke.qq.com/course/185893
+
+JavaScript框架Vue深入浅出(从入门到开发)
+https://ke.qq.com/course/226569
+
+
+Vue2.0小白入门教程
+https://ke.qq.com/course/279700
+
+
+尚硅谷AngularJS视频
+https://ke.qq.com/course/270442
+
+web前端开发 bootstrap框架基础视频教程
+https://ke.qq.com/course/279244
+
+路飞学城
+https://www.luffycity.com/home/camp?source=liaoxuefeng
+
+vue快速入门与实战开发 珠峰
+http://html5train.com/kecheng/detail_1389583?f=org_coursecenter
+https://github.com/zhufengzhufeng/201710node
+
+Node.js基础入门视频
+http://www.html5train.com/kecheng/detail_1430194?f=org_coursecenter
+
+ES6基础知识和应用
+http://www.ablesky.com/kecheng/detail_1463777
+
+自动化部署工具webpack/gulp
+http://www.html5train.com/kecheng/detail_1430214
+
+http://www.html5train.com/org/510_d_0_0_-1_-1_0_1?key=%E9%9D%A2%E8%AF%95%E9%A2%98
+
+Vue2实践揭秘 (梁睿坤著) 完整pdf扫描版[204MB]
+http://www.jb51.net/books/613756.html
+
+你有必要知道的25个JavaScript面试题
+http://www.jb51.net/article/77140.htm
+
+爱前端邵山欢VUE高级全栈课程
+https://ke.qq.com/course/202593
+https://v1-cn.vuejs.org/guide/transitions.html
+
+20180522 
+如何理解Vue组件中所说的is特性?
+https://segmentfault.com/q/1010000007205176
+
+20180523
+slot 邵老师 VUE.JS
+https://ke.qq.com/webcourse/index.html#course_id=202593&term_id=100239966&taid=1271696866875233&vid=u14172p4xh4
+
+https://v1-cn.vuejs.org/guide/components.html
+
+AngularJs 学习
+http://www.cnblogs.com/lvdabao/tag/AngularJs/
+
+angular自定义指令中的transclusion以及自定义指令的嵌套
+https://segmentfault.com/a/1190000007554744?_ea=1384944
+
+20180524 vue-router
+https://ke.qq.com/webcourse/index.html#course_id=202593&term_id=100239966&taid=1271705456809825&vid=y14176ggefh
+
+
+https://blog.csdn.net/sinat_17775997/article/details/52549123
+Vue.js——vue-router 60分钟快速入门
+
+
+https://www.qdfuns.com/study/video/list/page/1.html
+
+http://www.daqianduan.com/
+
+JS判断单、多张图片加载完成
+http://www.daqianduan.com/6419.html
+
+https://ke.qq.com/webcourse/index.html#course_id=202593&term_id=100239966&taid=1271722636679009&vid=z1417vdcbof
+https://github.com/vuejs/vue-loader/tree/master/docs/zh
+
+https://www.zhihu.com/question/39025104
+vuejs如何用vue-router构建路由？
+
+vue全家桶(Vue+Vue-router+Vuex+axios)（Vue+webpack项目实战系列之二）
+https://www.cnblogs.com/Nutrient-rich/p/7063058.html
+
+https://router.vuejs.org/zh-cn/installation.html
+
+https://github.com/vuejs/vue-router/blob/1.0/docs/zh-cn/basic.md 
+
+https://github.com/vuejs/vue-router/blob/1.0/docs/zh-cn/route.md
+
+https://ke.qq.com/webcourse/index.html#course_id=202593&term_id=100239966&taid=1271709751777121&vid=u1417j0dk63
+
+https://ke.qq.com/webcourse/index.html#course_id=202593&term_id=100239966&taid=1271714046744417&vid=l14173gq1y5
+
+https://github.com/vuejs/vue-router/blob/1.0/docs/zh-cn/link.md
+
+
+深入浅出ES6
+http://www.ablesky.com/kecheng/detail_1555861?f=org_coursecenter
+https://github.com/zhufengzhufeng/201710node
+
+《Node.js 调试指南》
+https://github.com/nswbmw/node-in-debugging
+
+http://www.ablesky.com/org/510_d_0_0_-1_-1_0_1
+http://www.ablesky.com/org/510_d_0_0_-1_-1_0_2
+
+ vue-validator 文档
+https://github.com/kazupon/vue-validator/tree/2.x/docs/zh-cn
+
+
+element-ui、iview、ant-design
+
+vuejs 和 element 搭建的一个后台管理界面
+http://www.cnblogs.com/taylorchen/p/6083099.html
+
+20180531
+Promise 详解与实现(遵循Promise/A+规范)
+http://www.zhufengpeixun.cn/qianduanjishuziliao/Nodejishuziliao/2018-04-08/1085.html
+
+promise语法,fliter,directives
+http://www.zhufengpeixun.cn/qianduanjishuziliao/vuezhuanti/2018-03-31/1082.html
+
+
+珠峰培训 姜文
+https://github.com/zhufengzhufeng/koa-public-5-31
+https://github.com/zhufengzhufeng
+
+
+20180601
+剖析Vue实现原理 - 如何实现双向绑定mvvm
+https://github.com/DMQ/
+https://github.com/DMQ/mvvm
+
+
+不要听吹牛逼什么前端MVVM框架就是好，其实都是一帮没学好分层设计的搞出来的，让你彻底看清前端MVVM的本质
+https://www.cnblogs.com/xueduanyang/p/3601471.html
+
+MVC与MVVM区别？
+https://www.cnblogs.com/woodk/p/5125500.html
+
+20180603
+
+传统 Ajax 已死，Fetch 永生
+https://segmentfault.com/a/1190000003810652
+
+
+fetch，终于认识你
+https://segmentfault.com/a/1190000011433064
+
+180605
+https://zhufengzhufeng.github.io/vue-todo/6.todo.html#complete
+js组件之----自定义滚动条
+https://blog.csdn.net/qq_40457310/article/details/79133628
+
+左耳朵耗子给出的学习指南
+https://www.cnblogs.com/wangtongxue/p/3273480.html
+
+http://caibaojian.com/haoel
+https://coolshell.cn/
+
+返回主页 Sagacity——池建强的BLOG
+https://www.cnblogs.com/chijianqiang/
+
+
+20180607
+应用Web框架模块设计三国演义篇
+http://blog.jobbole.com/89563/
+
+
+应用Web框架模块设计三国演义篇
+https://blog.csdn.net/oschina2017/article/details/78739294
+
+
+目前比较火的前端框架及UI组件
+https://blog.csdn.net/qq_41485414/article/details/79709216
+
+珠峰 课堂存档
+http://www.zhufengpeixun.cn/docs/html/index.html
+
+
+20180611
+vue.js实战之常用插件使用指南
+https://www.kancloud.cn/wmhello/vue_with_plugin
+
+Axios 中文说明
+https://www.kancloud.cn/yunye/axios
+
+https://www.kancloud.cn/tag/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91
+
+告别 “bootstrap” 臃肿开发，灵活定制栅格化响应式开发框架 直播客
+https://ke.qq.com/course/218792
+
+最新微信小程序开发 - 电影预告
+https://study.miaov.com/study/show/chapter/417
+微信小程序基础
+https://study.miaov.com/study/show/chapter/453
+《 vue 服务端渲染 SSR 》公开课
+https://study.miaov.com/study/show/chapter/449
+
+如何获取浏览器URL中查询字符串的参数
+https://www.cnblogs.com/wymninja/p/5716317.html
+
+http://tool.oschina.net/regex/
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+
+
+20180613
+es6中箭头函数有无作用域，this指向，能否使用arguments，为什么？
+https://segmentfault.com/q/1010000008720963?_ea=1724154
+
+20180615
+关于跨域和jsonp的一些理解(新手向)
+https://segmentfault.com/a/1190000009577990
+
+
+关于跨域,以及跨域的几种方式
+https://www.cnblogs.com/chenshishuo/p/4919224.html
+
+说说JSON和JSONP，跨域解决问题
+https://blog.csdn.net/zxf13598202302/article/details/53489592
+
+免费的编程中文书籍索引
+https://github.com/justjavac/free-programming-books-zh_CN
+
+B站视频开源代码flv.js的使用部署心得（代码案例应用）
+https://blog.csdn.net/hj7jay/article/details/54906612
+
+flv.js简单使用示例
+https://www.jianshu.com/p/1b825ae84005
+
+
+https://github.com/zhufengnodejs
+
+
+20180618 
+《深入理解ES6》教程学习笔记
+https://github.com/hyy1115/ES6-learning
+《深入理解ES6》
+https://blog.csdn.net/sophia_little/article/details/79442571
+
+《Understanding ECMAScript 6》中文翻译
+https://sagittarius-rev.gitbooks.io/understanding-ecmascript-6-zh-ver/content/chapter_1.html
+
+Underscore.js 中文文档
+http://www.css88.com/doc/underscore/
+
+JavaScript 实现密码可见性切换（显示和隐藏）
+http://www.css88.com/archives/9331
+
+
+WebSocket 协议介绍及 WebSocket API 应用
+http://www.css88.com/archives/9293
+
+ES6提示和技巧，使您的代码更清洁，更短，更易于阅读！
+http://www.css88.com/archives/9264
+
+JavaScript里的循环方法：forEach，for…in，for…of
+http://www.css88.com/archives/9261
+
+10 个更专业的 Javascript 调试技巧 – 使用 console
+http://www.css88.com/archives/9247
+
+10 个最常见的 JavaScript 错误（以及如何避免它们）- 来自 Rollbar 1000 多个项目的统计
+http://www.css88.com/archives/9184
+
+精心收集的 95 个超实用的 JavaScript 代码片段（ ES6+ 编写）
+http://www.css88.com/archives/8748
+
+你所不知道的JSON.parse() 和 JSON.stringify() – 高级用法
+http://www.css88.com/archives/8735
+
+如何快速学习 CSS Grid 布局 – 相关资源和教程推荐
+http://www.css88.com/archives/8675
+
+
+换种方式理解 JavaScript 中的 this
+http://www.css88.com/archives/8680
+
+JavaScript 中的 this ：工作原理和陷阱
+http://www.css88.com/archives/8685
+
+全面理解 JavaScript 中的 this
+http://www.css88.com/archives/8482
+
+CSS Grid VS Flexbox：实例比较
+http://www.css88.com/archives/8642
+
+边玩游戏边学 Grid 网格布局
+http://www.css88.com/archives/8618
+
+简单透彻理解JSONP原理及使用
+https://blog.csdn.net/u011897301/article/details/52679486
+
+介绍JSON
+http://www.16aspx.com/Article/3053
+
+
+http://note.youdao.com/noteshare?id=6a301213468716d4d839ca93f6b26025&sub=9EC17F0743A54B2A93B0A9E97C647EFF
+
+
+20180620
+
+https://github.com/zz-fe
+https://github.com/sageliu
+http://www.zhufengpeixun.cn/main/jgk/index.html
+前端三大框架中Vue与React区别
+https://www.cnblogs.com/yeshenyang/p/6992116.html?utm_source=itdadao&utm_medium=referral
+
+https://github.com/zz-fe/data-visualization-learning
+
+亲手写下前端开发App最清晰react-native环境配置流程拿走不谢！
+http://baijiahao.baidu.com/s?id=1584263535380324820&wfr=spider&for=pc
+
+从零开始实现React（一）：JSX和虚拟DOM
+https://www.imooc.com/article/24051?block_id=tuijian_wz
+
+从零开始实现 React（一）： JSX 和虚拟 DOM
+https://www.v2ex.com/amp/t/439607
+
+从零到react项目实用(一)
+https://tieba.baidu.com/p/5457703743?red_tag=0399586479
+
+
+http://react-china.org/t/react/14807/10
+
+
+20180623
+bower安装和使用
+https://www.jianshu.com/p/d9e46b5a8f80
+
+bower解决js的依赖管理
+http://blog.fens.me/nodejs-bower-intro/
+从零开始nodejs系列文章
+
+http://blog.fens.me/series-nodejs/
+
+基于webpack构建的angular 1.x 工程（一）webpack篇
+https://segmentfault.com/a/1190000011827425
+
+HTML5离线缓存Manifest
+https://www.cnblogs.com/hutuzhu/p/4871666.html
+
+
+Webpack入门——使用Webpack打包Angular项目的一个例子
+https://www.cnblogs.com/faithZZZ/p/6961289.html
+
+
+插件 html-webpack-plugin 的详解
+https://segmentfault.com/a/1190000013883242
+
+
+20180624
+使用ng-bind-html和$sce.trustAsHtml显示有html符号的内容
+https://www.cnblogs.com/lyy-2016/p/7928728.html
+
+前端必学（Yarn包管理神器）  
+http://blog.163.com/vincent_w/blog/static/247697051201751610245448/
+
+Angular 1.6提示$http.get(...).success is not a function
+https://blog.csdn.net/u011127019/article/details/54846710
+
+nodejs模块——fs模块 WriteFile写入文件
+https://www.cnblogs.com/guangzhou11/p/7700370.html
+
+如何把bootstrap用webpack打包
+https://www.cnblogs.com/liuyt/p/5708508.html
+
+简单的webpack- 引入bootstrap
+https://blog.csdn.net/zshake/article/details/72311617
+
+使用Visual Studio Code打开浏览器查看HTML文件
+https://www.cnblogs.com/undefined000/p/5466626.html
+
+20180626
+为什么js是单线程
+https://blog.csdn.net/sysuzhyupeng/article/details/55002854
+
+JS 事件循环机制 - 任务队列、web API、JS主线程的相互协同
+https://www.cnblogs.com/hity-tt/p/6733062.html
+
+
+看了这么久JS，事件队列你真的懂吗？
+https://blog.csdn.net/u013707249/article/details/78731356
+
+如何观察JS的事件队列的执行划分
+https://www.cnblogs.com/aguncn/p/5900162.html
+
+浏览器内的线程
+https://www.cnblogs.com/zhuanzhuanfe/p/7698058.html
+
+JS异步原理(事件,队列)
+https://www.2cto.com/kf/201709/681900.html
+
+css脱离文档流到底是什么意思，脱离文档流就不占据空间了吗？脱离文档流是不是指该元素从dom树中脱离？
+https://www.zhihu.com/question/24529373
+
+看了这么久JS，事件队列你真的懂吗？
+https://blog.csdn.net/u013707249/article/details/78731356
+
+setTimeout和setImmediate以及process.nextTick的区别
+http://www.cnblogs.com/cdwp8/p/4065846.html
+
+JavaScript 运行机制详解：再谈Event Loop
+http://www.ruanyifeng.com/blog/2014/10/event-loop.html
+
+新手向：Vue 2.0 的建议学习顺序 尤雨溪
+https://zhuanlan.zhihu.com/p/23134551
+
+修改npm包管理器的registry为淘宝镜像(npm.taobao.org)
+https://blog.csdn.net/recordme/article/details/47804435
+
+为什么我的新项目使用 Angular 而不是 Vue
+https://zhuanlan.zhihu.com/p/28348896
+
+前端开发：如何写一手漂亮的 Vue
+https://zhuanlan.zhihu.com/p/32805946
+https://jeffjade.com/2017/03/11/120-how-to-write-vue-better/?from=jianshu
+https://nicelinks.site/explore/skill
+
+
+如何评价文章《为什么只会Vue的都是前端小白？》
+https://zhuanlan.zhihu.com/p/28293541
+
+Vue.js 2.0 快速上手精华梳理
+https://zhuanlan.zhihu.com/p/29008145
+
+
+https://angular.cn/docs
+
+
+用Vue.js实现一个简单的搜索框
+https://blog.csdn.net/weixin_35987513/article/details/53308953
+
+Vue.js依赖收集
+https://zhuanlan.zhihu.com/p/28838074
+
+Vue轮播图的实现以及其与jQuery轮播图的简单对比
+https://zhuanlan.zhihu.com/p/26775447
+
+关于Vue.js面试题汇总
+https://zhuanlan.zhihu.com/p/35493203
+
+入口文件开始，分析Vue源码实现
+https://zhuanlan.zhihu.com/p/36030216
+
+程序员告诉你：为什么只会Vue的都是前端小白？
+https://www.sohu.com/a/192286573_608275
+Headless
+
+http://www.ruanyifeng.com/blog/javascript/
+
+ECMAScript 6 入门 阮一峰
+http://javascript.ruanyifeng.com/#bom
+http://es6.ruanyifeng.com/
+
+https://github.com/ruanyf/es6tutorial
+
+http://www.ruanyifeng.com/blog/2016/11/javascript.html
+
+http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html
+
+https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E5%8F%96%E5%BE%97%E9%A1%B9%E7%9B%AE%E7%9A%84-Git-%E4%BB%93%E5%BA%93
+
+
+20180628
+http://blog.jobbole.com/tag/git/
+大白话解释 Git 和 GitHub
+http://blog.jobbole.com/111187/
+
+http://www.zhufengpeixun.cn/qianduanjishuziliao/Nodejishuziliao/
+理解TCP/IP协议(一)
+http://www.zhufengpeixun.cn/qianduanjishuziliao/Nodejishuziliao/2018-04-15/1111.html
+正则详解一
+http://www.zhufengpeixun.cn/qianduanjishuziliao/javaScriptzhuanti/2018-03-31/1084.html
+promise语法,fliter,directives
+http://www.zhufengpeixun.cn/qianduanjishuziliao/vuezhuanti/2018-03-31/1082.html
+Promise 详解与实现(遵循Promise/A+规范)
+http://www.zhufengpeixun.cn/qianduanjishuziliao/Nodejishuziliao/2018-04-08/1085.html
+
+20180630
+
+https://www.w3cplus.com/blog/vue
+https://www.w3cplus.com/blog/react
+
+20180701
+学习vue之windows下安装live-server 超级详细篇
+https://www.cnblogs.com/88phper/p/8046237.html
